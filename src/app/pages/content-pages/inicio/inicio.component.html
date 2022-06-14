@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Inicio</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' media='screen' href='inicio.component.css'>
+    <script src='main.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <section class="textos-header">
+            <h2>Descubre los predios que posee la secretaría</h2>
+            <!--<button type="button" class="btn btn-Light" routerLink="/dashboard/dashboard1">Predios</button>-->
+            <!--<button type="button" class="btn btn-Light" routerLink="/dashboard/dashboard2">Predios</button>-->
+            <button class="btn btn-secundary my-2" routerLink="/pages/info-general"><h4 class="card-title">Ver más</h4></button>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #08f;"></path></svg></div>
+
+    </header>
+    <main>
+        <section class="contenedor">
+            <h2 class="titulo">Funciones</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="assets/img/gallery/9.jpg" alt="profile-img" class="rounded mr-3" height="64" width="600" [height]="540" padd>
+                <div class="contenido-textos">
+                    <h3><span>1</span> Búsqueda de predios </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laborum omnis quam, cumque voluptates fuga! Dolorem odit accusamus explicabo harum maiores. Quo vitae eius quisquam impedit repudiandae sequi vel alias?</p>
+                    <h3><span>2</span>Visor Geográfico</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laborum omnis quam, cumque voluptates fuga! Dolorem odit accusamus explicabo harum maiores. Quo vitae eius quisquam impedit repudiandae sequi vel alias?</p>
+                    <h3><span>3</span> Traslapes</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur laborum omnis quam, cumque voluptates fuga! Dolorem odit accusamus explicabo harum maiores. Quo vitae eius quisquam impedit repudiandae sequi vel alias?</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Accesos rapidos</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="assets/img/gallery/2.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="assets/img/gallery/2.jpg" alt="">
+                            <p routerLink="/dashboard/dashboard1">traslapes</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="assets/img/gallery/9.jpg" alt="" href="#" routerLink="/examenes" routerLinkActive="active">>
+                        <div class="hover-galeria">
+                            <img src="/assets/imag/01.png" alt="" href="#" routerLink="/examenes" routerLinkActive="active">>
+                            <p>Predios</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="assets/img/gallery/31.jpg" alt="">
+                        <div class="hover-galeria">
+                            <img src="assets/img/icons/thumbs-up.jpg" alt="" routerLink="">
+                            <p>visor geográfico</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

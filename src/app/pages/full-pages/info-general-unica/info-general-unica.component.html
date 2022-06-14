@@ -1,0 +1,653 @@
+<div class="row">
+    <div class="col-12">
+        <h1>Tabla Información General del Predio</h1>
+    </div>
+</div>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<section id="basic-input">
+
+    <nav>
+        <ul>
+            <li>
+                <div class="input-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <a href="#">Estudios y Conceptos </a>
+            </li>
+            <li>
+                <div class="input-wrapper">
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+                <a href="#">Información Fiscal</a>
+            </li>
+            <li>
+                <div class="input-wrapper">
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+                <a href="#">Información Financiera</a>
+            </li>
+
+            <li>
+                <div class="input-wrapper">
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+                <a href="#">Información Económica</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4>{{infoGeneral.nombre_predio}}</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <fieldset class="titulos">
+                                <label for="basicInput">Descripción de Predios</label>
+
+                            </fieldset>
+                            <div class="contenido">
+                                <textarea class="observaciones" name="observaciones" placeholder="" readonly>{{infoGeneral.declaratoria_publica}}</textarea>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip01">Número</label>
+                                <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.id}}" readonly>
+
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip02">Tipo de Bien</label>
+                                <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.tipo_bien}}" readonly>
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip03">Destinatario</label>
+                                <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.destinacion}}" readonly>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip01">Tipo de Activo</label>
+                                <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.tipo_activo}}" readonly>
+
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip02">Estado</label>
+                                <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.estado}}" readonly>
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip03">Adquisición</label>
+                                <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.adquisicion}}" readonly>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip01">Forma de Adquisición</label>
+                                <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.forma_adquisicion}}" readonly>
+
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip02">Convenio</label>
+                                <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.convenio_adquisicion}}" readonly>
+
+                            </div>
+                            <div class="col-md-4 form-group">
+
+                                <label for="validationTooltip03">Declaratoria de Utilidad Pública</label>
+                                <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.declaratoria_publica}}" readonly>
+
+                            </div>
+                        </div>
+                        <!--   </form> -->
+
+                        <br>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <h2>Información Financiera</h2>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!--<button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información fiscal asignada al predio</button>-->
+                                    <button class="btn btn-sm btn-secondary mr-1 mb-1" [routerLink]="['/pages/info-general-unica/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información financiera asignada a este predio</button>
+
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <br>
+                            <mat-card-content class="card-body">
+                                <div *ngIf="infoGeneral.informacion_fiscal?.length==0">
+                                    <p>No hay información fiscal asignada al predio.</p>
+                                </div>
+                                <div *ngIf="infoGeneral.informacion_fiscal?.length>0">
+                                    <!--<div class="form-row" *ngFor="let infoFiscal of infoGeneral.informacion_fiscal">-->
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">Remisión información</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.informacion_fiscal[0].remision_informacion}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">Remisión emitido</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.informacion_fiscal[0].remision_emitido}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">Fecha remisión</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.informacion_fiscal[0].fecha_remision}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip01">Memorando remisión</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.informacion_fiscal[0].memorando_remision}}" readonly>
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip02">Notificaciones</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.informacion_fiscal[0].notificaciones}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <fieldset class="titulos">
+                                            <label for="basicInput">Observaciones</label>
+
+                                        </fieldset>
+                                        <div class="contenido">
+                                            <textarea class="observaciones" name="observaciones" placeholder="{{infoGeneral.informacion_fiscal[0].observaciones}}"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-expansion-panel>
+                        <br>
+                        <br>
+                        <br>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <h2>Información Catastral</h2>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!--<button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información fiscal asignada al predio</button>-->
+                                    <button class="btn btn-secondary mr-1 mb-1" [routerLink]="['/pages/info-general-unica/asignar-info-catastral', infoGeneral.id]">Añadir y consultar la Información catastral asignada a este predio</button>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <br>
+                            <div *ngIf="infoGeneral.informacion_catastral?.length==0">
+                                <p>No hay información catastral asignada al predio.</p>
+                            </div>
+                            <div *ngIf="infoGeneral.informacion_catastral?.length>0">
+                                <!--<div class="form-row" *ngFor="let infoFiscal of infoGeneral.informacion_fiscal">-->
+                                <div class="form-row">
+
+                                    <div class="col-md-4 form-group">
+                                        <label for="validationTooltip01">sector_catastral</label>
+                                        <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].sector_catastral}}" readonly>
+                                    </div>
+
+                                    <div class="col-md-4 form-group">
+                                        <label for="validationTooltip02">codigo_catastral</label>
+                                        <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].codigo_catastral}}" readonly>
+                                    </div>
+
+                                    <div class="col-md-4 form-group">
+
+                                        <label for="validationTooltip03">direccion_catastral</label>
+                                        <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].direccion_catastral}}" readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+
+                                    <div class="col-md-4 form-group">
+
+                                        <label for="validationTooltip01">chip</label>
+                                        <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].chip}}" readonly>
+
+                                    </div>
+
+                                    <div class="col-md-4 form-group">
+
+                                        <label for="validationTooltip02">cedula_catastral</label>
+                                        <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].cedula_catastral}}" readonly>
+
+                                    </div>
+
+                                    <div class="col-md-4 form-group">
+
+                                        <label for="validationTooltip02">dest_catastral</label>
+                                        <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.informacion_catastral[0].dest_catastral}}" readonly>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </mat-expansion-panel>
+                        <br>
+                        <br>
+                        <br>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <h2>Localización</h2>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!--<button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información fiscal asignada al predio</button>-->
+                                    <button class="btn btn-secondary mr-1 mb-1" [routerLink]="['/pages/info-general-unica/asignar-localizacion', infoGeneral.id]">Añadir y consultar la Localización asignada a este predio</button>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <br>
+                            <mat-card-content class="card-body">
+                                <div *ngIf="infoGeneral.localizacion?.length==0">
+                                    <p>No hay localización asignada al predio.</p>
+                                </div>
+                                <div *ngIf="infoGeneral.localizacion?.length>0">
+                                    <!--<div class="form-row" *ngFor="let infoFiscal of infoGeneral.informacion_fiscal">-->
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">tipo_suelo</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].tipo_suelo}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">upl</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upl}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">localidad</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].localidad}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip01">upz_upr</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upz_upr}}" readonly>
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip02">nombre</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre}}" readonly>
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip02">componente_eep</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].componente_eep}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">categoria_eep</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].categoria_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">elemento_eep</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].elemento_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">nombre_eep</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre_eep}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">sector_eep</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">sector</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">brebestart</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].brebestart}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </mat-card-content>
+                        </mat-expansion-panel>
+
+                    <!--INFORMACIÓN TECNICA-->
+                        <br>
+                        <br>
+                        <br>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <h2>Tecnica </h2>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    <!--<button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información fiscal asignada al predio</button>-->
+                                    <button class="btn btn- my-2" [routerLink]="['/pages/info-general/asignar-info-tecnica', infoGeneral.id]">Añadir y consultar informacion tecnica asignada a este predio</button>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <br>
+                            <mat-card-content class="card-body">
+                                <div *ngIf="infoGeneral.estudios_y_conceptos?.length==0">
+                                    <p>No hay estudios asignados asignados al predio.</p>
+                                </div>
+                                <div *ngIf="infoGeneral.estudios_y_conceptos?.length>0">
+                                    <!--<div class="form-row" *ngFor="let infoFiscal of infoGeneral.informacion_fiscal">-->
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">tipo_suelo</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.estudios_y_conceptos[0].tipo_bien}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">upl</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upl}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">localidad</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].localidad}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip01">upz_upr</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upz_upr}}" readonly>
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip02">nombre</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre}}" readonly>
+
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip02">componente_eep</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].componente_eep}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">categoria_eep</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].categoria_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">elemento_eep</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].elemento_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">nombre_eep</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre_eep}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip01">sector_eep</label>
+                                            <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector_eep}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+                                            <label for="validationTooltip02">sector</label>
+                                            <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector}}" readonly>
+                                        </div>
+
+                                        <div class="col-md-4 form-group">
+
+                                            <label for="validationTooltip03">brebestart</label>
+                                            <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].brebestart}}" readonly>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </mat-card-content>
+                        </mat-expansion-panel>
+
+                 <!--INFORMACIÓN eSTUDIOS Y CONCEPTOS-->
+
+                 <br>
+                 <br>
+                 <br>
+                 <mat-expansion-panel>
+                     <mat-expansion-panel-header>
+                         <mat-panel-title>
+                             <h2>Estudios y conceptos </h2>
+                         </mat-panel-title>
+                         <mat-panel-description>
+                             <!--<button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', infoGeneral.id]">Añadir y consultar la Información fiscal asignada al predio</button>-->
+                             <button class="btn btn-info my-2" [routerLink]="['/pages/info-general/asignar-info-tecnica', infoGeneral.id]">Añadir y consultar los estudios y conceptos asignada a este predio</button>
+                         </mat-panel-description>
+                     </mat-expansion-panel-header>
+                     <br>
+                     <mat-card-content class="card-body">
+                         <div *ngIf="infoGeneral.estudios_y_conceptos?.length==0">
+                             <p>No hay estudios asignados asignados al predio.</p>
+                         </div>
+                         <div *ngIf="infoGeneral.estudios_y_conceptos?.length>0">
+                             <!--<div class="form-row" *ngFor="let infoFiscal of infoGeneral.informacion_fiscal">-->
+                             <div class="form-row">
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip01">tipo_suelo</label>
+                                     <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.estudios_y_conceptos[0].tipo_bien}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip02">upl</label>
+                                     <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upl}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip03">localidad</label>
+                                     <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].localidad}}" readonly>
+
+                                 </div>
+
+                             </div>
+
+                             <div class="form-row">
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip01">upz_upr</label>
+                                     <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].upz_upr}}" readonly>
+
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip02">nombre</label>
+                                     <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre}}" readonly>
+
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip02">componente_eep</label>
+                                     <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].componente_eep}}" readonly>
+
+                                 </div>
+
+                             </div>
+
+                             <div class="form-row">
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip01">categoria_eep</label>
+                                     <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].categoria_eep}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip02">elemento_eep</label>
+                                     <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].elemento_eep}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip03">nombre_eep</label>
+                                     <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].nombre_eep}}" readonly>
+
+                                 </div>
+
+                             </div>
+
+                             <div class="form-row">
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip01">sector_eep</label>
+                                     <input type="text" name="fname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector_eep}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+                                     <label for="validationTooltip02">sector</label>
+                                     <input type="text" name="lname" class="form-control" placeholder="{{infoGeneral.localizacion[0].sector}}" readonly>
+                                 </div>
+
+                                 <div class="col-md-4 form-group">
+
+                                     <label for="validationTooltip03">brebestart</label>
+                                     <input type="text" name="city" class="form-control" placeholder="{{infoGeneral.localizacion[0].brebestart}}" readonly>
+
+                                 </div>
+
+                             </div>
+
+                         </div>
+                     </mat-card-content>
+                 </mat-expansion-panel>
+
+                 <br>
+                 <br>
+                 <br>
+
+
+                        <h2>Posición Geográfica</h2>
+                        <hr>
+
+                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254469.04498570002!2d-74.18310049095291!3d4.756320627639745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3fa246a1fe57af%3A0xad04d4545b20f590!2sEntre%20Nubes%20Park!5e0!3m2!1sen!2sco!4v1651863723131!5m2!1sen!2sco"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

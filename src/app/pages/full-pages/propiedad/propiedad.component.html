@@ -1,0 +1,49 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body" style="overflow-x:auto;">
+        <button class="btn btn-primary my-2" routerLink="/pages/propiedad/form">Crear nueva propiedad</button>
+        <div *ngIf="lista?.length==0">
+            No hay propiedades en la base de datos.
+        </div>
+        <table class="table table-hover table-striped" *ngIf="lista?.length>0">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>predio_matriz_remanente</th>
+                    <th>matricula_inmobiliaria</th>
+                    <th>cod_catastral</th>
+                    <th>chip2</th>
+                    <th>ved_catastral</th>
+                    <th>propant</th>
+                    <th>tipoiden</th>
+                    <th>numiden</th>
+                    <th>telcontacto</th>
+                    <th>correo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let propiedad of lista">
+                    <td>{{propiedad.id}}</td>
+                    <td>{{propiedad.predio_matriz_remanente}}</td>
+                    <td>{{propiedad.matricula_inmobiliaria}}</td>
+                    <td>{{propiedad.cod_catastral}}</td>
+                    <td>{{propiedad.chip2}}</td>
+                    <td>{{propiedad.ved_catastral}}</td>
+                    <td>{{propiedad.propant}}</td>
+                    <td>{{propiedad.tipoiden}}</td>
+                    <td>{{propiedad.numiden}}</td>
+                    <td>{{propiedad.telcontacto}}</td>
+                    <td>{{propiedad.correo}}</td>
+                    <td><button class="btn btn-secondary btn-sm" [routerLink]="['/pages/propiedad/form', propiedad.id]"><div class="fonticon-wrap"><i class="fa ft-edit"></i></div></button></td>
+                    <td><button class="btn btn-danger btn-sm" (click)="eliminar(propiedad)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual" [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+        </mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+
+        <section id="basic-input">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Búsqueda rápida de predios</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Identificador del predio</label>
+                                            <input type="text" class="form-control" id="basicInput" placeholder="Digite el número" placement="bottom" ngbTooltip="Puede buscar por identificador del predio, número específico del predio, estado de adquisición o nombre del predio">
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Adquirido</label>
+                                            <input type="text" class="form-control" id="basicInput">
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Nombre del predio</label>
+                                            <input type="text" class="form-control" id="basicInput" placeholder="Ingrese el nombre del predio">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">Número específico del predio</label>
+                                            <input type="text" class="form-control" id="basicInput" placeholder="Digite el número del predio">
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <pre></pre>
+                                            <label for="readonlyInput">Estado</label>
+                                            <div ngbDropdown>
+                                                <button class="btn-btn-succes" id="dropdownBasic1" ngbDropdownToggle>Estado de adquisición</button>
+                                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                                    <button class="dropdown-item">Adquirido</button>
+                                                    <button class="dropdown-item">No Adquirido</button>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="form-group">
+                                            <br>
+                                            <button type="button" class="btn btn-success bg-light-success mr-1 mb-1">Buscar</button>
+                                        </fieldset>
+                                        <!--Toggle dropdown ends-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button class="btn btn-primary my-2" routerLink="/pages/info-general/form">Crear un nuevo predio</button>
+        <div *ngIf="lista?.length==0">
+            No hay predios en la base de datos.
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="table table-hover table-striped" *ngIf="lista?.length>0">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Identificador</th>
+                        <th>Tipo de bien</th>
+                        <th>Destinación</th>
+                        <th>Tipo de activo</th>
+                        <th>Estado</th>
+                        <th>Adquisición</th>
+                        <th>Forma de adquisición</th>
+                        <th>Proyecto SDA</th>
+                        <th>Convenio de adquisición</th>
+                        <th>Declaratoria pública</th>
+                        <th>Nombre predio</th>
+                        <th>Número específico</th>
+                        <!--<th>Información fiscal</th>-->
+                        <th>Ver más</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let predio of lista">
+                        <td>{{predio.id}}</td>
+                        <td>{{predio.chip}}</td>
+                        <td>{{predio.tipo_bien}}</td>
+                        <td>{{predio.destinacion}}</td>
+                        <td>{{predio.tipo_activo}}</td>
+                        <td>{{predio.estado}}</td>
+                        <td>{{predio.adquisicion}}</td>
+                        <td>{{predio.forma_adquisicion}}</td>
+                        <td>{{predio.proyecto_sda}}</td>
+                        <td>{{predio.convenio_adquisicion}}</td>
+                        <td>{{predio.declaratoria_publica}}</td>
+                        <td>{{predio.nombre_predio}}</td>
+                        <td>{{predio.numero_especifico}}</td>
+                        <!--<td><button class="btn btn-info btn-sm" [routerLink]="['/pages/info-general/asignar-info-fiscal', predio.id]">Añadir ({{predio.informacion_fiscal.length}})</button></td>-->
+                        <td><button class="btn btn-secondary btn-sm" [routerLink]="['/pages/info-general-unica', predio.id]"><div class="fonticon-wrap"><i class="fa fa-search-plus"></i></div></button></td>
+                        <td><button class="btn btn-secondary btn-sm" [routerLink]="['/pages/info-general/form', predio.id]"><div class="fonticon-wrap"><i class="fa ft-edit"></i></div></button></td>
+                        <td><button class="btn btn-danger btn-sm" (click)="eliminar(predio)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual" [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

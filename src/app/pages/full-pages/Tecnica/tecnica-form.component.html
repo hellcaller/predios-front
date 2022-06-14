@@ -1,0 +1,79 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/tecnica">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="remision_informacion">Área Terreno</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.areaterreno">
+                <div class="alert alert-danger" *ngIf="error?.remision_informacion">
+                    {{error.remision_informacion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="remision_emitido">Escritura HA</label>
+                <input type="text" name="remision_emitido" id="remision_emitido" class="form-control" [(ngModel)]="model.escrituraha">
+                <div class="alert alert-danger" *ngIf="error?.remision_emitido">
+                    {{error.remision_emitido}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_remision">Escritura M2</label>
+                <input type="text" name="fecha_remision" id="fecha_remision" class="form-control" [(ngModel)]="model.escrituram2">
+                <div class="alert alert-danger" *ngIf="error?.fecha_remision">
+                    {{error.fecha_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="memorando_remision">Certificado Tradición y Libertad</label>
+                 <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.certtradlib">
+                <div class="alert alert-danger" *ngIf="error?.memorando_remision">
+                    {{error.memorando_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Certificado Tradición y Libertad M2</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.certtradlibm2">
+                <div class="alert alert-danger" *ngIf="error?.observaciones">
+                    {{error.observaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Levantamiento Topográfico</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.levantopo">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Certificado Cabidad y Linderos</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.certcablin">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">UAECD M2</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.uaecdm2">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notificaciones">Area Adquirida</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.areaaquid">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

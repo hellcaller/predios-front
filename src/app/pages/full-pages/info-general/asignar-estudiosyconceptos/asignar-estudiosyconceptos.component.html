@@ -1,0 +1,115 @@
+<mat-card class="card mb-3">
+    <mat-card-header *ngIf="infoGeneral" class="card-header">
+        <mat-card-title class="card-title">
+            Estudios y conceptos del predio {{infoGeneral.nombre_predio}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-body">
+        <mat-tab-group dynamicHeight [(selectedIndex)]="tabIndex">
+            <mat-tab label="Asignar estudios y conceptos">
+                <div class="form-group">
+                    <label>Buscar estudios y conceptos</label>
+                    <mat-form-field class="form-control">
+                        <input matInput type="text" (keyup)="filtrar($event.target.value)">
+                    </mat-form-field>
+                </div>
+                <table mat-table [dataSource]="estudioConceptoAsignar" class="mat-elevation-z8 demo-table">
+                    <ng-container matColumnDef="seleccion">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event? seleccionarDesSeleccionarTodos(): null" [checked]="seleccion.hasValue() && estanTodosSeleccionados()" [indeterminate]="seleccion.hasValue() && !estanTodosSeleccionados()">
+
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let estudioConcepto">
+                            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event? seleccion.toggle(estudioConcepto): null" [checked]="seleccion.isSelected(estudioConcepto)">
+
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="estudiotitulos">
+                        <th mat-header-cell *matHeaderCellDef> estudiotitulos </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.estudiotitulos}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="elaboradopor">
+                        <th mat-header-cell *matHeaderCellDef> elaboradopor </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.elaboradopor}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fecharealizacion">
+                        <th mat-header-cell *matHeaderCellDef> fecharealizacion </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.fecharealizacion}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="mostrarColumnas"></tr>
+                    <tr mat-row *matRowDef="let row; columns: mostrarColumnas;"></tr>
+                </table>
+                <button mat-raised-button color="primary" class="m-4" (click)="asignarEstudiosYConcepto()" [disabled]="!seleccion.hasValue()">Asignar estudios y conceptos</button>
+            </mat-tab>
+            <mat-tab label="Estudios y conceptos asignados al predio">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="estudiotitulos">
+                        <th mat-header-cell *matHeaderCellDef> estudiotitulos </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.estudiotitulos}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="elaboradopor">
+                        <th mat-header-cell *matHeaderCellDef> elaboradopor </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.elaboradopor}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fecharealizacion">
+                        <th mat-header-cell *matHeaderCellDef> fecharealizacion </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.fecharealizacion}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="limitacion">
+                        <th mat-header-cell *matHeaderCellDef> limitacion </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.limitacion}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="descripcion">
+                        <th mat-header-cell *matHeaderCellDef> descripcion </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.descripcion}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="versiondoc">
+                        <th mat-header-cell *matHeaderCellDef> versiondoc </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.versiondoc}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="anexos">
+                        <th mat-header-cell *matHeaderCellDef> anexos </th>
+                        <td mat-cell *matCellDef="let estudioConcepto"> {{estudioConcepto.anexos}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="eliminar">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let estudioConcepto">
+                            <button mat-mini-fab class="btn btn-danger btn-sm" (click)="eliminarEstudiosYConcepto(estudioConcepto)">X</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="mostrarColumnasEstudioConcepto"></tr>
+                    <tr mat-row *matRowDef="let row; columns: mostrarColumnasEstudioConcepto;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons class="float-left mx-2">
+                </mat-paginator>
+            </mat-tab>
+        </mat-tab-group>
+        <!--<button class="btn btn-primary my-2" routerLink="/pages/info-general">Regresar al listado de predios</button>-->
+        <button class="btn btn-primary my-2" [routerLink]="['/pages/info-general-unica', infoGeneral.id]">Regresar</button>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,97 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/localizacion">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="tipo_suelo">tipo_suelo</label>
+                <input type="text" name="tipo_suelo" id="tipo_suelo" class="form-control" [(ngModel)]="model.tipo_suelo">
+                <div class="alert alert-danger" *ngIf="error?.tipo_suelo">
+                    {{error.tipo_suelo}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="upl">upl</label>
+                <input type="text" name="upl" id="upl" class="form-control" [(ngModel)]="model.upl">
+                <div class="alert alert-danger" *ngIf="error?.upl">
+                    {{error.upl}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="localidad">localidad</label>
+                <input type="text" name="localidad" id="localidad" class="form-control" [(ngModel)]="model.localidad">
+                <div class="alert alert-danger" *ngIf="error?.localidad">
+                    {{error.localidad}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="upz_upr">upz_upr</label>
+                <input type="text" name="upz_upr" id="upz_upr" class="form-control" [(ngModel)]="model.upz_upr">
+                <div class="alert alert-danger" *ngIf="error?.upz_upr">
+                    {{error.upz_upr}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre">nombre</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="model.nombre">
+                <div class="alert alert-danger" *ngIf="error?.nombre">
+                    {{error.nombre}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="componente_eep">componente_eep</label>
+                <input type="text" name="componente_eep" id="componente_eep" class="form-control" [(ngModel)]="model.componente_eep">
+                <div class="alert alert-danger" *ngIf="error?.componente_eep">
+                    {{error.componente_eep}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="categoria_eep">categoria_eep</label>
+                <input type="text" name="categoria_eep" id="categoria_eep" class="form-control" [(ngModel)]="model.categoria_eep">
+                <div class="alert alert-danger" *ngIf="error?.categoria_eep">
+                    {{error.categoria_eep}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="elemento_eep">elemento_eep</label>
+                <input type="text" name="elemento_eep" id="elemento_eep" class="form-control" [(ngModel)]="model.elemento_eep">
+                <div class="alert alert-danger" *ngIf="error?.elemento_eep">
+                    {{error.elemento_eep}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre_eep">nombre_eep</label>
+                <input type="text" name="nombre_eep" id="nombre_eep" class="form-control" [(ngModel)]="model.nombre_eep">
+                <div class="alert alert-danger" *ngIf="error?.nombre_eep">
+                    {{error.nombre_eep}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sector_eep">sector_eep</label>
+                <input type="text" name="sector_eep" id="sector_eep" class="form-control" [(ngModel)]="model.sector_eep">
+                <div class="alert alert-danger" *ngIf="error?.sector_eep">
+                    {{error.sector_eep}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sector">sector</label>
+                <input type="text" name="sector" id="sector" class="form-control" [(ngModel)]="model.sector">
+                <div class="alert alert-danger" *ngIf="error?.sector">
+                    {{error.sector}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="brebestart">brebestart</label>
+                <input type="text" name="brebestart" id="brebestart" class="form-control" [(ngModel)]="model.brebestart">
+                <div class="alert alert-danger" *ngIf="error?.brebestart">
+                    {{error.brebestart}}
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

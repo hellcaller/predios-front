@@ -1,0 +1,83 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/propiedad">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="predio_matriz_remanente">predio_matriz_remanente</label>
+                <input type="text" name="predio_matriz_remanente" id="predio_matriz_remanente" class="form-control" [(ngModel)]="model.predio_matriz_remanente">
+                <div class="alert alert-danger" *ngIf="error?.predio_matriz_remanente">
+                    {{error.predio_matriz_remanente}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="matricula_inmobiliaria">matricula_inmobiliaria</label>
+                <input type="text" name="matricula_inmobiliaria" id="matricula_inmobiliaria" class="form-control" [(ngModel)]="model.matricula_inmobiliaria">
+                <div class="alert alert-danger" *ngIf="error?.matricula_inmobiliaria">
+                    {{error.matricula_inmobiliaria}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cod_catastral">cod_catastral</label>
+                <input type="text" name="cod_catastral" id="cod_catastral" class="form-control" [(ngModel)]="model.cod_catastral">
+                <div class="alert alert-danger" *ngIf="error?.cod_catastral">
+                    {{error.cod_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chip2">chip2</label>
+                <input type="text" name="chip2" id="chip2" class="form-control" [(ngModel)]="model.chip2">
+                <div class="alert alert-danger" *ngIf="error?.chip2">
+                    {{error.chip2}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ved_catastral">ved_catastral</label>
+                <input type="text" name="ved_catastral" id="ved_catastral" class="form-control" [(ngModel)]="model.ved_catastral">
+                <div class="alert alert-danger" *ngIf="error?.ved_catastral">
+                    {{error.ved_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="propant">propant</label>
+                <input type="text" name="propant" id="propant" class="form-control" [(ngModel)]="model.propant">
+                <div class="alert alert-danger" *ngIf="error?.propant">
+                    {{error.propant}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tipoiden">tipoiden</label>
+                <input type="text" name="tipoiden" id="tipoiden" class="form-control" [(ngModel)]="model.tipoiden">
+                <div class="alert alert-danger" *ngIf="error?.tipoiden">
+                    {{error.tipoiden}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numiden">numiden</label>
+                <input type="number" name="numiden" id="numiden" class="form-control" [(ngModel)]="model.numiden">
+                <div class="alert alert-danger" *ngIf="error?.numiden">
+                    {{error.numiden}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telcontacto">telcontacto</label>
+                <input type="number" name="telcontacto" id="telcontacto" class="form-control" [(ngModel)]="model.telcontacto">
+                <div class="alert alert-danger" *ngIf="error?.telcontacto">
+                    {{error.telcontacto}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="correo">correo</label>
+                <input type="text" name="correo" id="correo" class="form-control" [(ngModel)]="model.correo">
+                <div class="alert alert-danger" *ngIf="error?.correo">
+                    {{error.correo}}
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

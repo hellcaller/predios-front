@@ -1,0 +1,94 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/adquisicion">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="remision_informacion">Oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.oferta">
+                <div class="alert alert-danger" *ngIf="error?.remision_informacion">
+                    {{error.remision_informacion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="remision_emitido">Fecha Oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechaoferta">
+                <div class="alert alert-danger" *ngIf="error?.remision_emitido">
+                    {{error.remision_emitido}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_remision">Oficio Notificación</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.oficionot">
+                <div class="alert alert-danger" *ngIf="error?.fecha_remision">
+                    {{error.fecha_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="memorando_remision">Fecha Notificación</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechanot">
+                <div class="alert alert-danger" *ngIf="error?.memorando_remision">
+                    {{error.memorando_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Fecha Aceptación Oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechaacepoferta">
+                <div class="alert alert-danger" *ngIf="error?.observaciones">
+                    {{error.observaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Fecha Inscripción oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechainscripcionoferta">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Fecha Oficio Inscripción Oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechaoficioinscripcionofer">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Oficio Inscripción</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.oficioinscripcion">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Fecha Cancelación Oferta</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.fechacancelacionoferta">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Anexo</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.anexodoc">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Observaciones</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.observaciones">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+
+
+
+
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

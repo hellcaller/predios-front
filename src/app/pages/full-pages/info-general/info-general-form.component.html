@@ -1,0 +1,97 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/info-general">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="tipo_bien">Tipo de bien</label>
+                <input type="text" name="tipo_bien" id="tipo_bien" class="form-control" [(ngModel)]="model.tipo_bien">
+                <div class="alert alert-danger" *ngIf="error?.tipo_bien">
+                    {{error.tipo_bien}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chip">Chip</label>
+                <input type="text" name="chip" id="chip" class="form-control" [(ngModel)]="model.chip">
+                <div class="alert alert-danger" *ngIf="error?.chip">
+                    {{error.chip}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="destinacion">Destinación</label>
+                <input type="text" name="destinacion" id="destinacion" class="form-control" [(ngModel)]="model.destinacion">
+                <div class="alert alert-danger" *ngIf="error?.destinacion">
+                    {{error.destinacion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tipo_activo">Tipo de activo</label>
+                <input type="text" name="tipo_activo" id="tipo_activo" class="form-control" [(ngModel)]="model.tipo_activo">
+                <div class="alert alert-danger" *ngIf="error?.tipo_activo">
+                    {{error.tipo_activo}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" name="estado" id="estado" class="form-control" [(ngModel)]="model.estado">
+                <div class="alert alert-danger" *ngIf="error?.estado">
+                    {{error.estado}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adquisicion">Adquisición</label>
+                <input type="text" name="adquisicion" id="adquisicion" class="form-control" [(ngModel)]="model.adquisicion">
+                <div class="alert alert-danger" *ngIf="error?.adquisicion">
+                    {{error.adquisicion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="forma_adquisicion">Forma de adquisición</label>
+                <input type="text" name="forma_adquisicion" id="forma_adquisicion" class="form-control" [(ngModel)]="model.forma_adquisicion">
+                <div class="alert alert-danger" *ngIf="error?.forma_adquisicion">
+                    {{error.forma_adquisicion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proyecto_sda">Proyecto SDA</label>
+                <input type="text" name="proyecto_sda" id="proyecto_sda" class="form-control" [(ngModel)]="model.proyecto_sda">
+                <div class="alert alert-danger" *ngIf="error?.proyecto_sda">
+                    {{error.proyecto_sda}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="convenio_adquisicion">Convenio adquisición</label>
+                <input type="text" name="convenio_adquisicion" id="convenio_adquisicion" class="form-control" [(ngModel)]="model.convenio_adquisicion">
+                <div class="alert alert-danger" *ngIf="error?.convenio_adquisicion">
+                    {{error.convenio_adquisicion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="declaratoria_publica">Declaratoria pública</label>
+                <input type="text" name="declaratoria_publica" id="declaratoria_publica" class="form-control" [(ngModel)]="model.declaratoria_publica">
+                <div class="alert alert-danger" *ngIf="error?.declaratoria_publica">
+                    {{error.declaratoria_publica}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre_predio">Nombre predio</label>
+                <input type="text" name="nombre_predio" id="nombre_predio" class="form-control" [(ngModel)]="model.nombre_predio">
+                <div class="alert alert-danger" *ngIf="error?.nombre_predio">
+                    {{error.nombre_predio}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numero_especifico">Número específico</label>
+                <input type="text" name="numero_especifico" id="numero_especifico" class="form-control" [(ngModel)]="model.numero_especifico">
+                <div class="alert alert-danger" *ngIf="error?.numero_especifico">
+                    {{error.numero_especifico}}
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

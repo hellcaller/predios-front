@@ -1,0 +1,58 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body" style="overflow-x:auto;">
+        <button class="btn btn-primary my-2" routerLink="/pages/adquisicion/form">Crear nueva información Aquisición</button>
+        <div class="card-body" style="overflow-x:auto;">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Oferta</th>
+                        <th>Fecha Oferta</th>
+                        <th>Oficio Notificación</th>
+                        <th>Fecha Notificación</th>
+                        <th>Fecha Aceptación Oferta</th>
+                        <th>Fecha Inscripción Oferta</th>
+                        <th>Fecha Oficio Inscripción</th>
+                        <th>Oficio Inscripción</th>
+                        <th>Fecha Cancelación</th>
+                        <th>Anexo Documento</th>
+                        <th>Observaciones</th>
+
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let adqui of lista">
+                        <td>{{adqui.id}}</td>
+                        <td>{{adqui.oferta}}</td>
+                        <td>{{adqui.fechaoferta}}</td>
+                        <td>{{adqui.oficionot}}</td>
+                        <td>{{adqui.fechanot}}</td>
+                        <td>{{adqui.fechaacepoferta}}</td>
+                        <td>{{adqui.fechainscripcionoferta}}</td>
+                        <td>{{adqui.fechaoficioinscripcionofer}}</td>
+                        <td>{{adqui.oficioinscripcion}}</td>
+                        <td>{{adqui.fechacancelacionoferta}}</td>
+                        <td>{{adqui.anexodoc}}</td>
+                        <td>{{adqui.observaciones}}</td>
+
+
+                        <td><button class="btn btn-secondary btn-sm" [routerLink]="['/pages/adquisicion/form', adqui.id]">
+                                <div class="fonticon-wrap"><i class="fa ft-edit"></i></div>
+                            </button></td>
+                        <td><button class="btn btn-danger btn-sm" (click)="eliminar(adqui)">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual"
+            [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons
+            class="float-left mx-2">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

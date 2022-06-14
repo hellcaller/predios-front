@@ -1,0 +1,55 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/info-catastral">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="sector_catastral">sector_catastral</label>
+                <input type="text" name="sector_catastral" id="sector_catastral" class="form-control" [(ngModel)]="model.sector_catastral">
+                <div class="alert alert-danger" *ngIf="error?.sector_catastral">
+                    {{error.sector_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="codigo_catastral">codigo_catastral</label>
+                <input type="text" name="codigo_catastral" id="codigo_catastral" class="form-control" [(ngModel)]="model.codigo_catastral">
+                <div class="alert alert-danger" *ngIf="error?.codigo_catastral">
+                    {{error.codigo_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="direccion_catastral">direccion_catastral</label>
+                <input type="text" name="direccion_catastral" id="direccion_catastral" class="form-control" [(ngModel)]="model.direccion_catastral">
+                <div class="alert alert-danger" *ngIf="error?.direccion_catastral">
+                    {{error.direccion_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chip">chip</label>
+                <input type="text" name="chip" id="chip" class="form-control" [(ngModel)]="model.chip">
+                <div class="alert alert-danger" *ngIf="error?.chip">
+                    {{error.chip}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cedula_catastral">cedula_catastral</label>
+                <input type="text" name="cedula_catastral" id="cedula_catastral" class="form-control" [(ngModel)]="model.cedula_catastral">
+                <div class="alert alert-danger" *ngIf="error?.cedula_catastral">
+                    {{error.cedula_catastral}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dest_catastral">dest_catastral</label>
+                <input type="text" name="dest_catastral" id="dest_catastral" class="form-control" [(ngModel)]="model.dest_catastral">
+                <div class="alert alert-danger" *ngIf="error?.dest_catastral">
+                    {{error.dest_catastral}}
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

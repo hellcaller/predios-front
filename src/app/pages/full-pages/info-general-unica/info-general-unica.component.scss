@@ -1,0 +1,72 @@
+agm-map {
+    height: 300px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 35px;
+    background-color: lightgreen;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    //background-color: white;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    display: inline-flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: #575857;
+    width: 250px;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-left: 20px;
+    padding-left: 40px;
+}
+
+.observaciones {
+    //width: 100%;
+    //background-color: #575857;
+    height: 10em;
+    width: 1080px;
+}
+
+.contenido {
+    display: flex;
+    margin: 20px;
+}
+
+.titulos {
+    // display: flex;
+    margin-left: 100px;
+}
+
+.coldat1 {
+    margin: 20px;
+}
+
+#btnginfogen {
+    text-align: center;
+    margin: 70px;
+    margin-left: 670px;
+}
+
+.mapa {
+    width: 1080px;
+    margin-left: 150px;
+}

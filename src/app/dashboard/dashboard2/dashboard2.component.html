@@ -1,0 +1,195 @@
+<!-- Basic Inputs start -->
+<section id="basic-input">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Busqueda</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">Estado</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Digite el numero">
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label for="helpInputTop">Adquirido</label>
+                                    <input type="text" class="form-control" id="helpInputTop">
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <label for="helperText">Nombre del predio</label>
+                                    <input type="text" id="helperText" class="form-control" placeholder="Name">
+                                    <small class="text-muted">por favor ingrese el nombre del predio</small>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset class="form-group">
+                                    <label for="disabledInput">Numero del predio</label>
+                                    <input type="text" class="form-control" id="disabledInput" placeholder="numero del predio" disabled>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <pre></pre>
+                                    <label for="readonlyInput">Estado</label>
+                                    <div ngbDropdown>
+                                        <button class="btn-btn-succes" id="dropdownBasic1" ngbDropdownToggle>Estado de adquisición</button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                            <button class="dropdown-item">Adquirido</button>
+                                            <button class="dropdown-item">No Adquirido</button>
+
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <br>
+                                    <button type="button" class="btn btn-success bg-light-success mr-1 mb-1">Buscar</button>
+                                </fieldset>
+                                <!--Toggle dropdown ends-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Basic Inputs end -->
+<!--Extended Table starts-->
+<div class="row">
+    <div class="col-12">
+        <div class="content-header">Extended Tables</div>
+    </div>
+</div>
+<section id="extended">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Action Buttons</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body table-responsive">
+                        <table class="table text-center m-0">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>Identificador</th>
+                                    <th>Tipo de bien</th>
+                                    <th>estado</th>
+                                    <th>Adquirido</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="item1">
+                                            <label for="item1"></label>
+                                        </div>
+                                    </td>
+                                    <td>sda_101</td>
+                                    <td>Casa</td>
+                                    <td>si</td>
+                                    <td>Adquirido</td>
+                                    <td class="text-truncate">
+                                        <a href="javascript:;" class="info p-0" routerLink="/pages/componente-prueba">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="success p-0">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="danger p-0">
+                                            <i class="ft-x font-medium-3"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="item2">
+                                            <label for="item2"></label>
+                                        </div>
+                                    </td>
+                                    <td>sda_102</td>
+                                    <td>Lote</td>
+                                    <td>si</td>
+                                    <td>SDA</td>
+                                    <td class="text-truncate">
+                                        <a href="javascript:;" class="info p-0">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="success p-0">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="danger p-0">
+                                            <i class="ft-x font-medium-3"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="item3">
+                                            <label for="item3"></label>
+                                        </div>
+                                    </td>
+                                    <td>sda_103</td>
+                                    <td>Casa</td>
+                                    <td>En construcción</td>
+                                    <td>SI</td>
+                                    <td class="text-truncate">
+                                        <a href="javascript:;" class="info p-0">
+                                            <i class="ft-user font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="success p-0">
+                                            <i class="ft-edit-2 font-medium-3 mr-2"></i>
+                                        </a>
+                                        <a href="javascript:;" class="danger p-0">
+                                            <i class="ft-x font-medium-3"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="button">
+    <button type="button" class="btn btn-success bg-light-success mr-1 mb-1" routerLink="/pages/componente-prueba">Prueba componente</button>
+</div>
+
+<div class="button">
+    <button type="button" class="btn btn-success bg-light-success mr-1 mb-1" routerLink="/pages/info-general">Prueba info</button>
+</div>
+
+<!--Extended Table Ends-->
+
+<!--Basic Pagination Starts
+<div class="col-xl-6 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Basic Pagination</h4>
+        </div>
+        <div class="card-content">
+            <div class="card-body">
+                <h5 class="mb-2 mt-4 text-bold-400">Default pagination</h5>
+                <ngb-pagination [collectionSize]="70" [(page)]="page"></ngb-pagination>
+                <p>Current page: {{page2}}</p>
+            </div>
+        </div>
+    </div>
+</div>-->

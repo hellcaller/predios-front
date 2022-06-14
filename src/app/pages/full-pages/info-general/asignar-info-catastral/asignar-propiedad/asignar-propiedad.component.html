@@ -1,0 +1,129 @@
+<mat-card class="card mb-3">
+    <mat-card-header *ngIf="infoCatastral" class="card-header">
+        <mat-card-title class="card-title">
+            Propiedad de la información catastral con id {{infoCatastral.id}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-body">
+        <mat-tab-group dynamicHeight [(selectedIndex)]="tabIndex">
+            <mat-tab label="Asignar propiedad">
+                <div class="form-group">
+                    <label>Buscar propiedad</label>
+                    <mat-form-field class="form-control">
+                        <input matInput type="text" (keyup)="filtrar($event.target.value)">
+                    </mat-form-field>
+                </div>
+                <table mat-table [dataSource]="propiedadAsignar" class="mat-elevation-z8 demo-table">
+                    <ng-container matColumnDef="seleccion">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event? seleccionarDesSeleccionarTodos(): null" [checked]="seleccion.hasValue() && estanTodosSeleccionados()" [indeterminate]="seleccion.hasValue() && !estanTodosSeleccionados()">
+
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let propiedad">
+                            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event? seleccion.toggle(propiedad): null" [checked]="seleccion.isSelected(propiedad)">
+
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="predio_matriz_remanente">
+                        <th mat-header-cell *matHeaderCellDef> predio_matriz_remanente </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.predio_matriz_remanente}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="matricula_inmobiliaria">
+                        <th mat-header-cell *matHeaderCellDef> matricula_inmobiliaria </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.matricula_inmobiliaria}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cod_catastral">
+                        <th mat-header-cell *matHeaderCellDef> cod_catastral </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.cod_catastral}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="mostrarColumnas"></tr>
+                    <tr mat-row *matRowDef="let row; columns: mostrarColumnas;"></tr>
+                </table>
+                <button mat-raised-button color="primary" class="m-4" (click)="asignarPropiedad()" [disabled]="!seleccion.hasValue()">Asignar propiedad</button>
+            </mat-tab>
+            <mat-tab label="Propiedad asignada a la información catastral">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="predio_matriz_remanente">
+                        <th mat-header-cell *matHeaderCellDef> predio_matriz_remanente </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.predio_matriz_remanente}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="matricula_inmobiliaria">
+                        <th mat-header-cell *matHeaderCellDef> matricula_inmobiliaria </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.matricula_inmobiliaria}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cod_catastral">
+                        <th mat-header-cell *matHeaderCellDef> cod_catastral </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.cod_catastral}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="chip2">
+                        <th mat-header-cell *matHeaderCellDef> chip2 </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.chip2}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ved_catastral">
+                        <th mat-header-cell *matHeaderCellDef> ved_catastral </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.ved_catastral}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="propant">
+                        <th mat-header-cell *matHeaderCellDef> propant </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.propant}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tipoiden">
+                        <th mat-header-cell *matHeaderCellDef> tipoiden </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.tipoiden}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="numiden">
+                        <th mat-header-cell *matHeaderCellDef> numiden </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.numiden}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="telcontacto">
+                        <th mat-header-cell *matHeaderCellDef> telcontacto </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.telcontacto}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="correo">
+                        <th mat-header-cell *matHeaderCellDef> correo </th>
+                        <td mat-cell *matCellDef="let propiedad"> {{propiedad.correo}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="eliminar">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let propiedad">
+                            <button mat-mini-fab class="btn btn-danger btn-sm" (click)="eliminarPropiedad(propiedad)">X</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="mostrarColumnasPropiedad"></tr>
+                    <tr mat-row *matRowDef="let row; columns: mostrarColumnasPropiedad;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons class="float-left mx-2">
+                </mat-paginator>
+            </mat-tab>
+        </mat-tab-group>
+        <button class="btn btn-primary my-2" [routerLink]="['/pages/info-general']">Regresar</button>
+    </mat-card-content>
+</mat-card>

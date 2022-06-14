@@ -1,0 +1,55 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/pages/info-fiscal">Volver</button>
+        <form>
+            <div class="form-group">
+                <label for="remision_informacion">Remisión información</label>
+                <input type="text" name="remision_informacion" id="remision_informacion" class="form-control" [(ngModel)]="model.remision_informacion">
+                <div class="alert alert-danger" *ngIf="error?.remision_informacion">
+                    {{error.remision_informacion}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="remision_emitido">Remisión emitido</label>
+                <input type="text" name="remision_emitido" id="remision_emitido" class="form-control" [(ngModel)]="model.remision_emitido">
+                <div class="alert alert-danger" *ngIf="error?.remision_emitido">
+                    {{error.remision_emitido}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha_remision">Fecha remisión</label>
+                <input type="text" name="fecha_remision" id="fecha_remision" class="form-control" [(ngModel)]="model.fecha_remision">
+                <div class="alert alert-danger" *ngIf="error?.fecha_remision">
+                    {{error.fecha_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="memorando_remision">Memorando remisión</label>
+                <input type="text" name="memorando_remision" id="memorando_remision" class="form-control" [(ngModel)]="model.memorando_remision">
+                <div class="alert alert-danger" *ngIf="error?.memorando_remision">
+                    {{error.memorando_remision}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Observaciones</label>
+                <input type="text" name="observaciones" id="observaciones" class="form-control" [(ngModel)]="model.observaciones">
+                <div class="alert alert-danger" *ngIf="error?.observaciones">
+                    {{error.observaciones}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notificaciones">Notificaciones</label>
+                <input type="text" name="notificaciones" id="notificaciones" class="form-control" [(ngModel)]="model.notificaciones">
+                <div class="alert alert-danger" *ngIf="error?.notificaciones">
+                    {{error.notificaciones}}
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="model.id? editar(): crear()">
+              {{model.id? 'Editar': 'Crear'}}
+            </button>
+        </form>
+    </div>
+</div>

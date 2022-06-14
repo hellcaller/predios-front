@@ -1,0 +1,53 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h4 class="card-title">{{titulo}}</h4>
+    </div>
+    <div class="card-body" style="overflow-x:auto;">
+        <button class="btn btn-primary my-2" routerLink="/pages/localizacion/form">Crear nueva localización</button>
+        <div *ngIf="lista?.length==0">
+            No hay localizaciones en la base de datos.
+        </div>
+        <table class="table table-hover table-striped" *ngIf="lista?.length>0">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>tipo_suelo</th>
+                    <th>upl</th>
+                    <th>localidad</th>
+                    <th>upz_upr</th>
+                    <th>nombre</th>
+                    <th>componente_eep</th>
+                    <th>categoria_eep</th>
+                    <th>elemento_eep</th>
+                    <th>nombre_eep</th>
+                    <th>sector_eep</th>
+                    <th>sector</th>
+                    <th>brebestart</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let localizacion of lista">
+                    <td>{{localizacion.id}}</td>
+                    <td>{{localizacion.tipo_suelo}}</td>
+                    <td>{{localizacion.upl}}</td>
+                    <td>{{localizacion.localidad}}</td>
+                    <td>{{localizacion.upz_upr}}</td>
+                    <td>{{localizacion.nombre}}</td>
+                    <td>{{localizacion.componente_eep}}</td>
+                    <td>{{localizacion.categoria_eep}}</td>
+                    <td>{{localizacion.elemento_eep}}</td>
+                    <td>{{localizacion.nombre_eep}}</td>
+                    <td>{{localizacion.sector_eep}}</td>
+                    <td>{{localizacion.sector}}</td>
+                    <td>{{localizacion.brebestart}}</td>
+                    <td><button class="btn btn-secondary btn-sm" [routerLink]="['/pages/localizacion/form', localizacion.id]"><div class="fonticon-wrap"><i class="fa ft-edit"></i></div></button></td>
+                    <td><button class="btn btn-danger btn-sm" (click)="eliminar(localizacion)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <mat-paginator [length]="totalRegistros" [pageSize]="totalPorPagina" [pageIndex]="paginaActual" [pageSizeOptions]="pageSizeOptions" (page)="paginar($event)" showFirstLastButtons class="float-left mx-2">
+        </mat-paginator>
+    </div>
+</div>

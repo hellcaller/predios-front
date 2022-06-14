@@ -1,0 +1,46 @@
+<div class="card bg mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <!--<button class="btn btn-primary my-2" routerLink="/infoGeneral/form">Crear</button>-->
+
+        <table class="table table-hover" *ngIf="predios?.length>0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo de bien</th>
+                    <th>Chip</th>
+                    <th>Destinación</th>
+                    <th>Tipo activo</th>
+                    <th>Estado</th>
+                    <th>Adquisición</th>
+                    <th>Forma adquisición</th>
+                    <th>Proyecto SDA</th>
+                    <th>Convenio adquisición</th>
+                    <th>Declaratoria pública</th>
+                    <th>Nombre predio</th>
+                    <th>Número específico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let predio of predios">
+                    <td>{{predio.id}}</td>
+                    <td>{{predio.tipo_bien}}</td>
+                    <td>{{predio.chip}}</td>
+                    <td>{{predio.destinacion}}</td>
+                    <td>{{predio.tipo_activo}}</td>
+                    <td>{{predio.estado}}</td>
+                    <td>{{predio.adquisicion}}</td>
+                    <td>{{predio.forma_adquisicion}}</td>
+                    <td>{{predio.proyecto_sda}}</td>
+                    <td>{{predio.convenio_adquisicion}}</td>
+                    <td>{{predio.declaratoria_publica}}</td>
+                    <td>{{predio.nombre_predio}}</td>
+                    <td>{{predio.numero_especifico}}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
